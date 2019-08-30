@@ -6,14 +6,14 @@ error_reporting(0);
 // Basic Parameter Filter
 // Copyright (c)2019 - Afrizal F.A - ICWR-TECH
 
-if($_POST) {
+if(!empty($_POST)) {
   foreach($_POST as $x => $v) {
     $_POST[$x]=str_replace(["'","\""],["",""],$_POST[$x]);
   }
 }
 
-if($_GET) {
-  foreach($_GET as $key => $v) {
+if(!empty($_GET)) {
+  foreach($_GET as $x => $v) {
     $_GET[$x]=str_replace(["<",">","'","\""],["","","",""],$_GET[$x]);
   }
 }
